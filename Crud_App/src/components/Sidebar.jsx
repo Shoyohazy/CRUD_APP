@@ -4,10 +4,10 @@ function Sidebar() {
   return (
     <div className='sidebar-section' >
             <ul className='side-list'>
-                <li className='side-list-item'>
-                    <a href="">UserList</a>
+                <li className='side-list-item li_hover'>
+                    <a href="">USER</a>
                 </li>
-                <li className='side-list-item'>
+                <li className='side-list-item li_hover'>
                     <a href="">Form</a>
                 </li>
             </ul>

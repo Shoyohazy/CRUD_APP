@@ -1,11 +1,13 @@
 .list-ul{
     list-style: none;
     margin-top: 5%;
-    margin-left:30%;
+    margin-left:20%;
+    min-width: 700px;
 }
 
 .user-list{
-    width: 75%;
+    /* width: 75%; */
+    width: 80%;
     height : 50px;
     display: flex;
     flex-direction: row;
@@ -22,8 +24,10 @@
 .userinfo{
     display: flex;
     width: 200px;
-    justify-content: space-between;
     margin-left: 5px;
+}
+.name-info{
+    margin-left: 20%;
 }
 .index{
     margin-right: 90%;
@@ -44,5 +48,6 @@
 
 .userbuttons>button:hover{
     cursor: pointer;
+    color: black;
     background-color: rgb(60, 46, 216);
 }

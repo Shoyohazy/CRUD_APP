@@ -11,7 +11,7 @@ function UserList() {
   },[])
   console.log(data)
   return (
-    <div>
+    <div style={{width: "100%"}}>
         {data.isLoading ? <h1>Loading...</h1> : <List data={data}/>}
     </div>
   )
