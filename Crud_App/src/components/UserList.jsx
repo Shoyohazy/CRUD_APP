@@ -1,3 +1,4 @@
+import List from '../UI-KIT/List';
 import {useDispatch , useSelector} from 'react-redux';
 import {fetchUsers} from '../features/fetchUsers'
 import { useEffect } from 'react';
@@ -11,11 +12,7 @@ function UserList() {
   console.log(data)
   return (
     <div>
-        {data.isLoading ? <h1>Loading...</h1> :
-            data?.users?.map((user)=>{
-                return <p key={user.id}>{user.firstName}</p>
-            })
-        }
+        {data.isLoading ? <h1>Loading...</h1> : <List data={data}/>}
     </div>
   )
 }
