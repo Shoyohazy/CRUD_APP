@@ -2,13 +2,13 @@ import './list.css'
 function List({ data }) {
   return (
     <>
-      <ul>
+      <ul className='list-ul'>
         {data?.users?.map((user, index) => {
           return (
             <li className="user-list" key={user.id}>
               <div className="userinfo">
                 <h3>{index + 1}</h3>
-                <h3>{user.name}</h3>
+                <h3>{user.firstName}</h3>
               </div>
               <div className="userbuttons">
                 <button

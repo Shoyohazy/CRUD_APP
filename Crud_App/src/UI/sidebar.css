@@ -1,0 +1,21 @@
+
+.sidebar-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end ;
+    width: 30%;
+    height: auto;
+    padding: 0;
+}
+
+.side-list{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.side-list-item{
+    list-style: none;
+}
