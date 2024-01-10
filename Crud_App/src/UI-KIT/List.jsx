@@ -3,7 +3,7 @@ function List({ data }) {
   return (
     <>
       <ul className='list-ul'>
-        {data?.users?.slice(0,10)?.map((user, index) => {
+        {data?.users?.slice(0,10 )?.map((user, index) => {
           return (
             <li className="user-list" key={user.id}>
               <div className="userinfo">

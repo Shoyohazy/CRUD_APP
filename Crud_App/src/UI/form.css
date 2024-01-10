@@ -1,0 +1,28 @@
+
+
+a{
+    min-width: 80%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 100%;
+}
+.input-name{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
+
+.input-credentials{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    margin-bottom: 5%;
+}
