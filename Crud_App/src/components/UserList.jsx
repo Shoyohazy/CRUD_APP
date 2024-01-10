@@ -9,7 +9,7 @@ function UserList() {
   useEffect(()=>{
     dispatch(fetchUsers());
   },[])
-  console.log(data)
+
   return (
     <div style={{width: "100%"}}>
         {data.isLoading ? <h1 style={{color:'white'}}>Loading...</h1> : <List data={data}/>}

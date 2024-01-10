@@ -7,7 +7,7 @@ const initialState = {
     error:false,
 }
 
-export const fetchUsers = createAsyncThunk("fetchUsers" , async () =>{
+export const fetchUsers = createAsyncThunk("users/fetchUsers" , async () =>{
     const response = await fetch("https://dummyjson.com/users");
     const data = response.json();
     return data;
@@ -21,7 +21,7 @@ const userSlice = createSlice({
             state.users.push(action.payload)
         },
         deleteUsers(state ,action){
-            const index = state.users.indexOf(action.payload.id)
+            const index = state.users.find(user => user.id  == action.payload)
             state.users.splice(index , 1);
         },
 
