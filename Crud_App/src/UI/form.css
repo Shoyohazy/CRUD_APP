@@ -4,12 +4,22 @@ a{
     min-width: 80%;
 }
 form{
+    color: white    ;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 500px;
     width: 100%;
+}
+input{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    font-size: 1rem;
+    padding-left: 10px;
+    color: white;
 }
 .input-name{
     width: 100%;
@@ -19,10 +29,125 @@ form{
     margin-bottom: 5%;
 }
 
+
+#firstname{
+    width: 350px;
+    height: 50px;
+}
+#firstname>input{
+    margin-left: 15px;
+    border-radius: 8px;
+    color: white;
+    /* border-top: 0;
+    border-left: 0;
+    border-right: 0; */
+
+    height: 25px;
+    /* border: none; */
+    outline: none;
+
+}
+#firstname>label{
+    font-size: 1.2rem;
+}
+#lastname{
+    width: 300px;
+}
+#lastname>input{
+    margin-left: 15px;
+    border-radius: 8px;
+    height: 25px;
+}
+#lastname>label{
+    font-size: 1.2rem;
+}
+
+
 .input-credentials{
     width: 100%;
     display: flex;
     justify-content: center;
     justify-content: space-around;
     margin-bottom: 5%;
+}
+#Email{
+    width: 350px;
+    height: 50px;
+}
+#Email>input{
+    margin-left: 43px;
+    border-radius: 8px;
+    height: 25px;
+}
+#Email>label{
+    font-size: 1.2rem;
+    margin-left: 13px;
+}
+#Password{
+    width: 350px;
+    height: 50px;
+}
+#Password>input{
+    margin-left: 15px;
+    border-radius: 8px;
+    height: 25px;
+}
+#Password>label{
+    font-size: 1.2rem;
+    margin-left: 34px;
+}
+#Age{
+    width: 350px;
+    height: 50px;
+}
+#Age>input{
+    margin-left: 55px;
+    border-radius: 8px;
+    height: 25px;
+}
+#Age>label{
+    font-size: 1.2rem;
+    margin-left: 34px;
+}
+#Gender{
+    width: 350px;
+    height: 50px;
+}
+#Gender>input{
+    margin-left: 33px;
+    border-radius: 8px;
+    height: 25px;
+}
+#Gender>label{
+    font-size: 1.2rem;
+    margin-left: 11px;
+}
+
+.submit-button{
+    display: flex  ;
+    width: 120px;
+    height: 60px;
+    justify-content: center;
+    padding: 2px;
+    margin-left: 70%;
+    margin-top: 5%;
+    padding-top: 5px;
+}
+
+.submit-button>button{
+    border-radius: 12px;
+    width: 90%;
+    font-weight: 700;
+    font-size: 1rem;
+    height: 90%;
+    background-color: blue;
+    color: white;
+}
+.submit-button>button:hover{
+    cursor: pointer;
+    background-color: gray;
+}
+
+.error{
+    color: red;
 }
