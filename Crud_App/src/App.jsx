@@ -1,11 +1,18 @@
+import { useDispatch } from 'react-redux';
 import './App.css'
 import Form from './components/Form';
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import UserList from './components/UserList'
 import { Routes , Route } from "react-router-dom";
+import { fetchUsers } from './features/fetchUsers';
+import { useEffect } from 'react';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(fetchUsers());
+  },[])
 
   return (
     <>

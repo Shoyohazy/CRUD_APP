@@ -5,7 +5,7 @@ const initialState = {
     users : [],
     isLoading:false,
     error:false,
-    isUpdating:false,
+    isUpdating:null,
 }
 
 export const fetchUsers = createAsyncThunk("users/fetchUsers" , async () =>{
@@ -19,24 +19,18 @@ const userSlice = createSlice({
     initialState,
     reducers:{
         addUsers(state ,action){
-            state.users.push({...action.payload});
+            state.users.push({id:state.users.length + 1,...action.payload});
         },
         deleteUsers(state ,action){
-            const index = state.users.find(user => user.id  == action.payload)
+            const index = state.users.findIndex(user => user.id  == action.payload)
             state.users.splice(index , 1);
         },
         updateUsers(state , action){
-            state.users.map((user)=>{
-                if(user.id == action.payload.id){
-                    return {...user , ...action.payload};
-                }
-                else{
-                    return user;
-                }
-            })
+            state.users[action.payload.id] = action.payload
         },
-        userIsUpdating(state){
-            state.isUpdating = !state.isUpdating;
+        userIsUpdating(state, action){
+            console.log(action.payload)
+            state.isUpdating = action.payload;
         }
 
     },

@@ -1,25 +1,33 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../UI/form.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addUsers, updateUsers } from "../features/fetchUsers";
+import { addUsers, updateUsers, userIsUpdating } from "../features/fetchUsers";
 
 export default function Form() {
-  const isEditing = useSelector((state) => state.user.isUpdating);
-  console.log(isEditing)
+  const userId = useSelector((state) => state.user.isUpdating);
+  console.log(userId)
   const userData = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
     gender: "",
-    age: "",
+    age: 0,
   });
-  // console.log(formData)
+  // console.log(userData.users)
+ 
+  useEffect(() => {
+    if(userId) {
+      console.log(userData.users[userId -1])
+      setFormData({...userData.users[userId -1], id: userId-1})
+    }
+  }, [])
+
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -40,7 +48,7 @@ export default function Form() {
     const newErrors = {};
 
     // Validation rules (you can customize these as needed)
-    // if (!formData.firstname.trim()) {
+    // if (!formData.firstName.trim()) {
     //   newErrors.name = 'Name is required';
     //   isValid = false;
     // }
@@ -53,7 +61,7 @@ export default function Form() {
       isValid = false;
     }
 
-    if (!formData.age.trim()) {
+    if (formData.age < 1) {
       newErrors.age = "Age is required";
       isValid = false;
     } else if (isNaN(formData.age) || parseInt(formData.age) < 0) {
@@ -73,17 +81,21 @@ export default function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const isValid = validateForm();
-    if (isEditing) {
-      setFormData(userData);
+    if (userId) {
+      // setFormData(userData);
+      //console.log(formData)
       dispatch(updateUsers(formData));
+      dispatch(userIsUpdating(null));
+      navigate('/')
+      return
     }
 
     if (isValid) {
       //dispacth form data
       dispatch(addUsers(formData));
     }
-    
-    navigate("/")
+
+    navigate('/')
   };
 
   return (
@@ -91,22 +103,22 @@ export default function Form() {
       <form onSubmit={handleSubmit}>
         <div className="input-name">
           <div id="firstname">
-            <label htmlFor="firstname">Firstname</label>
+            <label htmlFor="firstName">Firstname</label>
             <input
               type="text"
-              value={formData.name}
-              name="firstname"
+              value={formData.firstName}
+              name="firstName"
               onChange={handleChange}
               required
             />
             {errors.name && <div className="error">{errors.name}</div>}
           </div>
           <div id="lastname">
-            <label htmlFor="lastname">Lastname</label>
+            <label htmlFor="lastName">Lastname</label>
             <input
               type="text"
-              value={formData.lastname}
-              name="lastname"
+              value={formData.lastName}
+              name="lastName"
               onChange={handleChange}
               required
             />
@@ -161,8 +173,8 @@ export default function Form() {
         </div>
         {/* <Link to='/'> */}
         <div className="submit-button">
-            <button onClick={handleSubmit}>
-              {isEditing ? "Update" : "Submit"}
+            <button type="submit">
+              {userId ? "Update" : "Submit"}
             </button>
         </div>
         {/* </Link> */}

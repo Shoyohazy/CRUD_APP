@@ -6,9 +6,9 @@ import { useEffect } from 'react';
 function UserList() {
   const dispatch = useDispatch();
   const data = useSelector((state)=>state.user)
-  useEffect(()=>{
-    dispatch(fetchUsers());
-  },[])
+  // useEffect(()=>{
+  //   dispatch(fetchUsers());
+  // },[])
 
   return (
     <div style={{width: "100%"}}>

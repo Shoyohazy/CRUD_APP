@@ -8,13 +8,13 @@ function List({ data }) {
   function handleDelete(userId){
       dispatch(deleteUsers(userId))
   }
-  function handleUpdate(){
-      dispatch(userIsUpdating())
+  function handleUpdate(userId){
+      dispatch(userIsUpdating(userId))
   }
   return (
     <>
       <ul className='list-ul'>
-        {data.users?.slice(0,100 )?.map((user, index) => {
+        {data.users?.slice(25,100 )?.map((user, index) => {
           return (
             <li className="user-list" key={user.id}>
               <div className="userinfo">
@@ -25,7 +25,7 @@ function List({ data }) {
                 <Link to="/form">
                   <button
                     className="update-button"
-                    onClick={handleUpdate}
+                    onClick={() => handleUpdate(user.id)}
                   > 
                     Update
                   </button>
