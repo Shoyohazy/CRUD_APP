@@ -14,7 +14,7 @@ function List({ data }) {
   return (
     <>
       <ul className='list-ul'>
-        {data.users?.slice(25,100 )?.map((user, index) => {
+        {data.users?.slice(27,100 )?.map((user, index) => {
           return (
             <li className="user-list" key={user.id}>
               <div className="userinfo">

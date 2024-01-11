@@ -6,7 +6,6 @@ import { addUsers, updateUsers, userIsUpdating } from "../features/fetchUsers";
 
 export default function Form() {
   const userId = useSelector((state) => state.user.isUpdating);
-  console.log(userId)
   const userData = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate()
@@ -17,14 +16,14 @@ export default function Form() {
     email: "",
     password: "",
     gender: "",
-    age: 0,
+    age: "",
   });
   // console.log(userData.users)
  
   useEffect(() => {
     if(userId) {
-      console.log(userData.users[userId -1])
-      setFormData({...userData.users[userId -1], id: userId-1})
+      console.log(userData.users[userId])
+      setFormData({...userData.users[userId-1], id: userId})
     }
   }, [])
 

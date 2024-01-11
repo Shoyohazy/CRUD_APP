@@ -26,10 +26,10 @@ const userSlice = createSlice({
             state.users.splice(index , 1);
         },
         updateUsers(state , action){
-            state.users[action.payload.id] = action.payload
+            state.users[action.payload.id -1] = action.payload ;
+            state.isUpdating = null;
         },
         userIsUpdating(state, action){
-            console.log(action.payload)
             state.isUpdating = action.payload;
         }
 
