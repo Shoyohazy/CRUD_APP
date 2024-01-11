@@ -19,15 +19,22 @@ const userSlice = createSlice({
     initialState,
     reducers:{
         addUsers(state ,action){
-            state.users.push({id:state.users.length + 1,...action.payload});
+            state.users.push({id:state.users.length + 1,...action.payload})
         },
         deleteUsers(state ,action){
             const index = state.users.findIndex(user => user.id  == action.payload)
             state.users.splice(index , 1);
         },
         updateUsers(state , action){
-            state.users[action.payload.id -1] = action.payload ;
-            state.isUpdating = null;
+            // state.users[action.payload.id -1] = action.payload ;
+            // state.isUpdating = null;
+
+           state.users= state.users.map((user)=>{
+                if(user.id == action.payload.id){
+                    return {...user, ...action.payload}
+                }
+                return user;
+            })
         },
         userIsUpdating(state, action){
             state.isUpdating = action.payload;
@@ -47,6 +54,9 @@ const userSlice = createSlice({
         })
     }
 })
+
+export const selectAllUsers = globalState => globalState.user.users
+console.log(selectAllUsers)
 
 export const {addUsers , deleteUsers , updateUsers ,userIsUpdating} = userSlice.actions;
 export default userSlice.reducer

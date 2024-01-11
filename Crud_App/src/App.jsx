@@ -7,12 +7,14 @@ import UserList from './components/UserList'
 import { Routes , Route } from "react-router-dom";
 import { fetchUsers } from './features/fetchUsers';
 import { useEffect } from 'react';
+import User from './UI-KIT/User';
+import UserView from './UI-KIT/UserView';
 
 function App() {
   const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(fetchUsers());
-  },[dispatch])
+  },[])
 
   return (
     <>
@@ -25,6 +27,7 @@ function App() {
         <Routes>
           <Route path='/' element={<UserList/>}/>
           <Route path='/form' element={<Form/>}/>
+          <Route path='/:id' element={<UserView/>} />
         </Routes>
       </div>
       

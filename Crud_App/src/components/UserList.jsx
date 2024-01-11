@@ -10,10 +10,11 @@ function UserList() {
     // dispatch(fetchUsers());
     dispatch(userIsUpdating(null))
   },[])
+  console.log(data)
 
   return (
     <div style={{width: "100%"}}>
-        {data.isLoading ? <h1 style={{color:'white'}}>Loading...</h1> : <List data={data}/>}
+        {data.isLoading ? <h1 style={{color:'white'}}>Loading...</h1> : <List {...data}/>}
     </div>
   )
 }
