@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../UI/form.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addUsers, updateUsers } from "../features/fetchUsers";
 
 export default function Form() {
-  const isEditing = useSelector((state) => state.isUpdating);
+  const isEditing = useSelector((state) => state.user.isUpdating);
+  console.log(isEditing)
   const userData = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
     firstname: "",
@@ -80,7 +82,8 @@ export default function Form() {
       //dispacth form data
       dispatch(addUsers(formData));
     }
- 
+    
+    navigate("/")
   };
 
   return (
@@ -156,13 +159,13 @@ export default function Form() {
             {errors.age && <div className="error">{errors.age}</div>}
           </div>
         </div>
-        <Link to='/'>
+        {/* <Link to='/'> */}
         <div className="submit-button">
             <button onClick={handleSubmit}>
               {isEditing ? "Update" : "Submit"}
             </button>
         </div>
-        </Link>
+        {/* </Link> */}
       </form>
     </>
   );

@@ -36,7 +36,7 @@ const userSlice = createSlice({
             })
         },
         userIsUpdating(state){
-            state.isUpdating != state.isUpdating;
+            state.isUpdating = !state.isUpdating;
         }
 
     },
