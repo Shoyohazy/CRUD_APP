@@ -7,7 +7,6 @@ import UserList from './components/UserList'
 import { Routes , Route } from "react-router-dom";
 import { fetchUsers } from './features/fetchUsers';
 import { useEffect } from 'react';
-import User from './UI-KIT/User';
 import UserView from './UI-KIT/UserView';
 
 function App() {

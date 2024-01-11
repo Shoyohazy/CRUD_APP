@@ -1,6 +1,6 @@
 import List from '../UI-KIT/List';
 import {useDispatch , useSelector} from 'react-redux';
-import {fetchUsers, userIsUpdating} from '../features/fetchUsers'
+import { userIsUpdating} from '../features/fetchUsers'
 import { useEffect } from 'react';
 
 function UserList() {

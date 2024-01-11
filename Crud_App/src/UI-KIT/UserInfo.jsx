@@ -1,14 +1,16 @@
-import React from 'react'
+import './userinfo.css'
 
 function UserInfo(props) {
     console.log("userIno",props)
     const {lastName, firstName, age, email} = props
   return (
-    <div style={{color:'white', fontWeight:'bolder'}}>
-        <h1>firstName : {firstName}</h1>
-        <h1>lastName : {lastName}</h1>
-        <h1>age : {age}</h1>
-        <h1>email : {email}</h1>
+    <div  className="User-Card" >
+        <div className='container'>
+            <h3>First Name : {firstName}</h3>
+            <h3>Last Name : {lastName}</h3>
+            <h3>Age : {age}</h3>
+            <h3>Email : {email}</h3>
+        </div>
     </div>
   )
 }

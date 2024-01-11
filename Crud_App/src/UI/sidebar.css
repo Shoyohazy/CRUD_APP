@@ -22,15 +22,15 @@
 
 .side-list-item{
     list-style: none;
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
+    border-top: 1px solid rgb(16, 15, 15);
+    border-bottom: 1px solid rgb(21, 19, 19);
     border-radius: 9999px;
     margin-top: 40px;
 }
 
 a{
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .li_hover {

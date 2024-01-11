@@ -1,8 +1,6 @@
-import { deleteUsers, userIsUpdating } from '../features/fetchUsers';
 import './list.css'
-import { Link } from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux'
 import User from './User';
+
 function List(props) {
    const {users} = props;
    console.log(users)

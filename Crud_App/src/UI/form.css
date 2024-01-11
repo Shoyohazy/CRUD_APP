@@ -3,8 +3,9 @@
 a{
     min-width: 80%;
 }
+
 form{
-    color: white    ;
+    color: black    ;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +20,8 @@ input{
     border-bottom: 1px solid rgb(19, 11, 165);
     font-size: 1rem;
     padding-left: 10px;
-    color: white;
+    color: black;
+    font-weight: 300;
 }
 .input-name{
     width: 100%;
@@ -36,8 +38,8 @@ input{
 }
 #firstname>input{
     margin-left: 15px;
-    border-radius: 8px;
-    color: white;
+
+    color:black;
     /* border-top: 0;
     border-left: 0;
     border-right: 0; */
@@ -55,7 +57,6 @@ input{
 }
 #lastname>input{
     margin-left: 15px;
-    border-radius: 8px;
     height: 25px;
 }
 #lastname>label{
@@ -76,7 +77,6 @@ input{
 }
 #Email>input{
     margin-left: 43px;
-    border-radius: 8px;
     height: 25px;
 }
 #Email>label{
@@ -89,7 +89,6 @@ input{
 }
 #Password>input{
     margin-left: 15px;
-    border-radius: 8px;
     height: 25px;
 }
 #Password>label{
@@ -102,7 +101,6 @@ input{
 }
 #Age>input{
     margin-left: 55px;
-    border-radius: 8px;
     height: 25px;
 }
 #Age>label{
@@ -115,7 +113,6 @@ input{
 }
 #Gender>input{
     margin-left: 33px;
-    border-radius: 8px;
     height: 25px;
 }
 #Gender>label{
@@ -145,7 +142,7 @@ input{
 }
 .submit-button>button:hover{
     cursor: pointer;
-    background-color: gray;
+    background-color: rgb(109, 62, 240);
 }
 
 .error{

@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { selectAllUsers } from '../features/fetchUsers'
-import User from './User'
 import UserInfo from './UserInfo'
 
 export default function UserView() {
