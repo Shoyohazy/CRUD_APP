@@ -19,13 +19,15 @@ function User(props) {
         <h3 className="name-info">{firstName + " " + lastName}</h3>
       </div>
       <div className="userbuttons">
-        <Link to="/form">
+        <Link to="/form" className="updateLink">
           <button className="update-button" onClick={() => handleUpdate(id)}>
-            Update
+           <i class="gg-pen"></i>
+            {/* Update */}
           </button>
         </Link>
         <button onClick={() => handleDelete(id)} className="delete-button">
-          Delete
+          {/* Delete */}
+          <i class="gg-trash"></i>
         </button>
       </div>
     </li>

@@ -3,13 +3,15 @@
     display: flex;
     justify-content: center;
     height: 12vh;
-    border-bottom: 2px solid rgb(219, 215, 215);
-    box-shadow:  0 8px 12px -5px rgba(0, 0, 0, 0.2) ;
+    border-bottom: 2px solid blueviolet;
+    box-shadow:  2px 8px 12px -5px rgba(0, 0, 0, 0.2) ;
 }
 
 .AppHeader div{
+    font-family: sans-serif;
+    font-style: oblique;
     margin-top: 0.5rem;
     font-weight: 700;
     font-size: 1.7rem;
-    color: black;
+    color: blueviolet;
 }

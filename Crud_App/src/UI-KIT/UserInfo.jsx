@@ -1,8 +1,8 @@
 import './userinfo.css'
 
 function UserInfo(props) {
-    console.log("userIno",props)
-    const {lastName, firstName, age, email} = props
+
+    const {lastName, firstName, age, email ,gender} = props
   return (
     <div  className="User-Card" >
         <div className='container'>
@@ -10,6 +10,7 @@ function UserInfo(props) {
             <h3>Last Name : {lastName}</h3>
             <h3>Age : {age}</h3>
             <h3>Email : {email}</h3>
+            <h3>Gender:{gender}</h3>
         </div>
     </div>
   )
