@@ -7,7 +7,7 @@ function List(props) {
   return (
     <>
       <ul className='list-ul'>
-        {users?.slice(27,100 )?.map((user, index) => {
+        {users?.slice(23,100 )?.map((user, index) => {
           console.log(user)
           return (
               <User {...user} index={index}/> 
